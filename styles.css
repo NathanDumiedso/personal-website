@@ -22,12 +22,70 @@ body {
     line-height: 1.6;
 }
 
-/* Header */
+/* ── Header ── */
 header {
-    background: linear-gradient(135deg, var(--primary), #2d3a4a);
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #0c1a2e, #0d3b66, #1a535c, #2d3a4a);
+    background-size: 300% 300%;
+    animation: gradientShift 12s ease infinite;
     color: #fff;
     text-align: center;
     padding: 5rem 1rem 4rem;
+}
+
+@keyframes gradientShift {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Floating particles */
+.particle {
+    position: absolute;
+    bottom: -20px;
+    left: var(--x);
+    width: var(--size);
+    height: var(--size);
+    background: rgba(116, 185, 255, 0.4);
+    border-radius: 50%;
+    animation: floatUp var(--duration) var(--delay) ease-in infinite;
+    pointer-events: none;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) translateX(0);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.7;
+    }
+    80% {
+        opacity: 0.3;
+    }
+    100% {
+        transform: translateY(-350px) translateX(30px);
+        opacity: 0;
+    }
+}
+
+/* Header text animations */
+.header-content {
+    position: relative;
+    z-index: 1;
+    animation: headerFadeIn 1s ease-out;
+}
+
+@keyframes headerFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 header h1 {
@@ -54,7 +112,11 @@ header .location {
     opacity: 0.6;
 }
 
-/* Navigation */
+header .location i {
+    margin-right: 0.3rem;
+}
+
+/* ── Navigation ── */
 nav {
     background: var(--card-bg);
     border-bottom: 1px solid var(--border);
@@ -78,14 +140,30 @@ nav a {
     text-decoration: none;
     color: var(--text-light);
     font-weight: 500;
+    position: relative;
     transition: color 0.2s;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent);
+    transition: width 0.3s ease;
 }
 
 nav a:hover {
     color: var(--accent);
 }
 
-/* Sections */
+nav a:hover::after {
+    width: 100%;
+}
+
+/* ── Sections ── */
 main {
     max-width: 800px;
     margin: 0 auto;
@@ -100,17 +178,33 @@ section {
     margin-bottom: 2rem;
 }
 
+/* Scroll fade-in */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 section h2 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
     color: var(--accent);
 }
 
+section h2 i {
+    margin-right: 0.5rem;
+}
+
 section p {
     color: var(--text-light);
 }
 
-/* Experience */
+/* ── Experience ── */
 .role-card h3 {
     font-size: 1.15rem;
     color: var(--text);
@@ -128,7 +222,7 @@ section p {
     margin-top: 0.25rem;
 }
 
-/* Skills */
+/* ── Skills ── */
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
@@ -143,14 +237,71 @@ section p {
     text-align: center;
     font-size: 0.9rem;
     color: var(--text);
-    transition: border-color 0.2s;
+    transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+    cursor: default;
 }
 
 .skill-tag:hover {
     border-color: var(--accent);
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(9, 132, 227, 0.15);
 }
 
-/* Languages */
+/* ── Achievements ── */
+.achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.25rem;
+}
+
+.achievement-card {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.5rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.achievement-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.achievement-icon {
+    font-size: 1.8rem;
+    color: var(--accent);
+    margin-bottom: 0.75rem;
+}
+
+.achievement-card h3 {
+    font-size: 1.1rem;
+    color: var(--text);
+    margin-bottom: 0.75rem;
+}
+
+.achievement-card ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.achievement-card li {
+    font-size: 0.88rem;
+    color: var(--text-light);
+    padding-left: 1rem;
+    position: relative;
+}
+
+.achievement-card li::before {
+    content: '›';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: 700;
+}
+
+/* ── Languages ── */
 .languages-list {
     list-style: none;
     display: flex;
@@ -174,6 +325,11 @@ section p {
     padding: 0.2rem 0.7rem;
     border-radius: 12px;
     font-weight: 500;
+    transition: filter 0.2s;
+}
+
+.lang-level:hover {
+    filter: brightness(0.92);
 }
 
 .lang-level.native {
@@ -196,12 +352,59 @@ section p {
     color: #636e72;
 }
 
-/* Contact */
+/* ── Actively Learning ── */
+.learning-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 1rem;
+}
+
+.learning-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    background: var(--bg);
+    border: 2px solid var(--accent-light);
+    border-radius: 10px;
+    padding: 1.5rem 1rem;
+    text-align: center;
+    font-weight: 500;
+    color: var(--text);
+    animation: pulseGlow 3s ease-in-out infinite;
+    transition: transform 0.2s;
+}
+
+.learning-card:hover {
+    transform: scale(1.05);
+}
+
+.learning-card i {
+    font-size: 2rem;
+    color: var(--accent);
+}
+
+@keyframes pulseGlow {
+    0%, 100% {
+        box-shadow: 0 0 8px rgba(9, 132, 227, 0.15);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(9, 132, 227, 0.35);
+    }
+}
+
+/* ── Contact ── */
 .contact-list {
     list-style: none;
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
+}
+
+.contact-list li i {
+    color: var(--accent);
+    width: 1.2rem;
+    margin-right: 0.5rem;
 }
 
 .contact-list a {
@@ -213,7 +416,7 @@ section p {
     text-decoration: underline;
 }
 
-/* Footer */
+/* ── Footer ── */
 footer {
     text-align: center;
     padding: 2rem 1rem;
