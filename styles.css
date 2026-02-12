@@ -1,0 +1,223 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #1a2332;
+    --accent: #0984e3;
+    --accent-light: #74b9ff;
+    --bg: #f9fafb;
+    --card-bg: #ffffff;
+    --text: #2d3436;
+    --text-light: #636e72;
+    --border: #dfe6e9;
+}
+
+body {
+    font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background: linear-gradient(135deg, var(--primary), #2d3a4a);
+    color: #fff;
+    text-align: center;
+    padding: 5rem 1rem 4rem;
+}
+
+header h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+header .title {
+    font-size: 1.25rem;
+    opacity: 0.95;
+    margin-bottom: 0.25rem;
+}
+
+header .subtitle {
+    font-size: 1rem;
+    opacity: 0.7;
+    letter-spacing: 0.5px;
+    margin-bottom: 1rem;
+}
+
+header .location {
+    font-size: 0.9rem;
+    opacity: 0.6;
+}
+
+/* Navigation */
+nav {
+    background: var(--card-bg);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1rem;
+    max-width: 900px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-light);
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+nav a:hover {
+    color: var(--accent);
+}
+
+/* Sections */
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+section {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--accent);
+}
+
+section p {
+    color: var(--text-light);
+}
+
+/* Experience */
+.role-card h3 {
+    font-size: 1.15rem;
+    color: var(--text);
+    margin-bottom: 0.25rem;
+}
+
+.role-card .company {
+    font-weight: 600;
+    color: var(--text);
+}
+
+.role-card .period {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-top: 0.25rem;
+}
+
+/* Skills */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 0.75rem;
+}
+
+.skill-tag {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--text);
+    transition: border-color 0.2s;
+}
+
+.skill-tag:hover {
+    border-color: var(--accent);
+}
+
+/* Languages */
+.languages-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.languages-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.lang-name {
+    font-weight: 500;
+    min-width: 80px;
+}
+
+.lang-level {
+    font-size: 0.8rem;
+    padding: 0.2rem 0.7rem;
+    border-radius: 12px;
+    font-weight: 500;
+}
+
+.lang-level.native {
+    background: #d4f5e9;
+    color: #00815a;
+}
+
+.lang-level.professional {
+    background: #d6eaff;
+    color: #0968c3;
+}
+
+.lang-level.limited {
+    background: #fff3d6;
+    color: #9a6700;
+}
+
+.lang-level.elementary {
+    background: #f0f0f0;
+    color: #636e72;
+}
+
+/* Contact */
+.contact-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.contact-list a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.contact-list a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    color: var(--text-light);
+    font-size: 0.85rem;
+    border-top: 1px solid var(--border);
+}
