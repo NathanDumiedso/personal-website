@@ -16,3 +16,11 @@
 - [x] New section: Actively Learning (AI / ML / Claude / AI Agents)
 - [x] Update nav with new section links
 - [x] Pulsing glow animation on learning cards
+
+## Phase 3: Content Extraction & Dynamic Loading (Complete)
+- [x] Create `content.json` with all text content structured by section
+- [x] Create `main.js` with fetch logic and per-section render functions
+- [x] Refactor `index.html` to use empty placeholder elements
+- [x] Move IntersectionObserver code from inline script to `main.js`
+- [x] Link `main.js` with `defer` attribute
+- [x] Update docs (plan.md, decisions.md, progress.md)

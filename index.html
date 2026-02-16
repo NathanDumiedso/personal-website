@@ -6,6 +6,7 @@
     <title>Donatien Dumas — Project Finance Analyst &amp; Modeler</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
+    <script src="main.js" defer></script>
 </head>
 <body>
     <header>
@@ -17,145 +18,60 @@
         <div class="particle" style="--x: 85%; --delay: 4s; --duration: 8s; --size: 6px;"></div>
         <div class="particle" style="--x: 50%; --delay: 2.5s; --duration: 12s; --size: 9px;"></div>
         <div class="header-content">
-            <h1>Donatien Dumas</h1>
-            <p class="title">Project Finance Analyst &amp; Modeler</p>
-            <p class="subtitle">Finance | Innovation | International | Data</p>
-            <p class="location"><i class="fa-solid fa-location-dot"></i> Prague, Czech Republic</p>
+            <h1 id="header-name"></h1>
+            <p class="title" id="header-title"></p>
+            <p class="subtitle" id="header-subtitle"></p>
+            <p class="location"><i class="fa-solid fa-location-dot"></i><span id="header-location"></span></p>
         </div>
     </header>
 
     <nav>
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#achievements">Achievements</a></li>
-            <li><a href="#languages">Languages</a></li>
-            <li><a href="#learning">Learning</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+        <ul id="nav-list"></ul>
     </nav>
 
     <main>
         <section id="about" class="fade-in">
-            <h2><i class="fa-solid fa-user"></i> About Me</h2>
-            <p>
-                I am a finance professional with a strong foundation in valuation and business modeling, developed at Mazars and EY. Naturally curious and entrepreneurial, I am very interested in the start-up and IT industries. As a quick learner and hardworking individual, I thrive on challenges and am result-oriented. With experience in the United States, Canada, Russia, and France, I am now based in Czech Republic. Dynamic and sociable, I appreciate collaborative efforts while also excelling in data analysis and transformation.
-            </p>
+            <h2></h2>
+            <p></p>
         </section>
 
         <section id="experience" class="fade-in">
-            <h2><i class="fa-solid fa-briefcase"></i> Current Role</h2>
+            <h2></h2>
             <div class="role-card">
-                <h3>Project Finance Analyst</h3>
-                <p class="company">SOLEK HOLDING SE</p>
-                <p class="period">July 2025 &mdash; Present</p>
+                <h3></h3>
+                <p class="company"></p>
+                <p class="period"></p>
             </div>
         </section>
 
         <section id="skills" class="fade-in">
-            <h2><i class="fa-solid fa-lightbulb"></i> Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-tag">Business Strategy</div>
-                <div class="skill-tag">Product Management</div>
-                <div class="skill-tag">Team Leadership</div>
-                <div class="skill-tag">Financial Modeling &amp; Valuation</div>
-                <div class="skill-tag">Data Analysis &amp; Transformation</div>
-                <div class="skill-tag">Business Modeling</div>
-                <div class="skill-tag">Project Management</div>
-            </div>
+            <h2></h2>
+            <div class="skills-grid"></div>
         </section>
 
         <section id="achievements" class="fade-in">
-            <h2><i class="fa-solid fa-trophy"></i> Past Main Achievements</h2>
-            <div class="achievements-grid">
-                <div class="achievement-card">
-                    <div class="achievement-icon"><i class="fa-solid fa-person-running"></i></div>
-                    <h3>Sports</h3>
-                    <ul>
-                        <li>Marathon Moscow</li>
-                        <li>EcoTrail 45km</li>
-                        <li>Semi-marathon below 1h25</li>
-                    </ul>
-                </div>
-                <div class="achievement-card">
-                    <div class="achievement-icon"><i class="fa-solid fa-heart"></i></div>
-                    <h3>Family</h3>
-                    <ul>
-                        <li>1 wife and three happy boys</li>
-                    </ul>
-                </div>
-                <div class="achievement-card">
-                    <div class="achievement-icon"><i class="fa-solid fa-file-excel"></i></div>
-                    <h3>Excel Modeling</h3>
-                    <ul>
-                        <li>Inventory tool for all IBM Z systems</li>
-                        <li>Strategic cashflow split tool — 300+ operating units (Bourbon)</li>
-                        <li>Costs allocation tool — 20+ countries (BNP Paribas)</li>
-                        <li>PV project value split tool — 50+ projects (Solek)</li>
-                        <li>VBA search/navigation app for large databases</li>
-                        <li>Custom Excel add-in for complex model navigation</li>
-                    </ul>
-                </div>
-            </div>
+            <h2></h2>
+            <div class="achievements-grid"></div>
         </section>
 
         <section id="languages" class="fade-in">
-            <h2><i class="fa-solid fa-globe"></i> Languages</h2>
-            <ul class="languages-list">
-                <li><span class="lang-name">French</span> <span class="lang-level native">Native</span></li>
-                <li><span class="lang-name">English</span> <span class="lang-level professional">Professional</span></li>
-                <li><span class="lang-name">Russian</span> <span class="lang-level professional">Professional</span></li>
-                <li><span class="lang-name">Spanish</span> <span class="lang-level limited">Limited</span></li>
-                <li><span class="lang-name">Czech</span> <span class="lang-level elementary">Elementary</span></li>
-            </ul>
+            <h2></h2>
+            <ul class="languages-list"></ul>
         </section>
 
         <section id="learning" class="fade-in">
-            <h2><i class="fa-solid fa-graduation-cap"></i> Actively Learning</h2>
-            <div class="learning-grid">
-                <div class="learning-card">
-                    <i class="fa-solid fa-brain"></i>
-                    <span>Artificial Intelligence</span>
-                </div>
-                <div class="learning-card">
-                    <i class="fa-solid fa-gears"></i>
-                    <span>Machine Learning</span>
-                </div>
-                <div class="learning-card">
-                    <i class="fa-solid fa-robot"></i>
-                    <span>Claude</span>
-                </div>
-                <div class="learning-card">
-                    <i class="fa-solid fa-network-wired"></i>
-                    <span>AI Agents</span>
-                </div>
-            </div>
+            <h2></h2>
+            <div class="learning-grid"></div>
         </section>
 
         <section id="contact" class="fade-in">
-            <h2><i class="fa-solid fa-envelope"></i> Contact</h2>
-            <ul class="contact-list">
-                <li><i class="fa-solid fa-at"></i> <a href="mailto:donatien.dumas@sciencespo.fr">donatien.dumas@sciencespo.fr</a></li>
-                <li><i class="fa-brands fa-linkedin"></i> <a href="https://linkedin.com/in/donatiendumas" target="_blank" rel="noopener">linkedin.com/in/donatiendumas</a></li>
-            </ul>
+            <h2></h2>
+            <ul class="contact-list"></ul>
         </section>
     </main>
 
     <footer>
-        &copy; 2026 Donatien Dumas. All rights reserved.
+        <span id="footer-text"></span>
     </footer>
-
-    <script>
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, { threshold: 0.1 });
-
-        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-    </script>
 </body>
 </html>

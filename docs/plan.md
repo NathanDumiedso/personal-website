@@ -70,3 +70,41 @@ Add "Achievements" and "Learning" links.
 - Verify all 3 achievement categories with correct content
 - Verify 4 "Actively Learning" cards with pulsing glow
 - Resize browser window — check responsive behavior
+
+---
+
+# Plan: Extract Content into JSON and Load Dynamically
+
+## Context
+All text content was hardcoded in `index.html`. To separate content from structure, all text was extracted into `content.json` and the HTML was refactored to load content dynamically via JavaScript.
+
+## Files Created
+- `content.json` — all text content structured by section
+- `main.js` — fetches JSON and populates HTML, includes scroll animations
+
+## Files Modified
+- `index.html` — text replaced with empty placeholder elements, inline script removed, `main.js` linked
+
+## JSON Structure
+Each HTML section maps to a top-level key in `content.json`:
+- `header` — name, title, subtitle, location
+- `nav` — array of { label, href }
+- `about` — heading, icon, text
+- `experience` — heading, icon, role { title, company, period }
+- `skills` — heading, icon, items[]
+- `achievements` — heading, icon, cards[] with nested items
+- `languages` — heading, icon, items[] with name/level/levelClass
+- `learning` — heading, icon, items[] with icon/label
+- `contact` — heading, icon, items[] with icon/label/href/external
+- `footer` — text
+
+## Pattern for Adding New Sections
+1. Add a new key to `content.json` with the section data
+2. Add a `<section id="new-section" class="fade-in">` with empty placeholder elements in `index.html`
+3. Add a `renderNewSection(data)` function in `main.js` and call it from the fetch handler
+
+## Verification
+- Serve via local HTTP server (`npx serve`, `python -m http.server`, etc.) since `fetch()` requires HTTP
+- Confirm all sections render identically to the previous hardcoded version
+- Confirm fade-in scroll animations still work
+- Confirm nav links scroll to correct sections

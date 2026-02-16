@@ -1,0 +1,120 @@
+{
+  "header": {
+    "name": "Donatien Dumas",
+    "title": "Project Finance Analyst & Modeler",
+    "subtitle": "Finance | Innovation | International | Data",
+    "location": "Prague, Czech Republic"
+  },
+  "nav": [
+    { "label": "About", "href": "#about" },
+    { "label": "Experience", "href": "#experience" },
+    { "label": "Skills", "href": "#skills" },
+    { "label": "Achievements", "href": "#achievements" },
+    { "label": "Languages", "href": "#languages" },
+    { "label": "Learning", "href": "#learning" },
+    { "label": "Contact", "href": "#contact" }
+  ],
+  "about": {
+    "heading": "About Me",
+    "icon": "fa-solid fa-user",
+    "text": "I am a finance professional with a strong foundation in valuation and business modeling, developed at Mazars and EY. Naturally curious and entrepreneurial, I am very interested in the start-up and IT industries. As a quick learner and hardworking individual, I thrive on challenges and am result-oriented. With experience in the United States, Canada, Russia, and France, I am now based in Czech Republic. Dynamic and sociable, I appreciate collaborative efforts while also excelling in data analysis and transformation."
+  },
+  "experience": {
+    "heading": "Current Role",
+    "icon": "fa-solid fa-briefcase",
+    "role": {
+      "title": "Project Finance Analyst",
+      "company": "SOLEK HOLDING SE",
+      "period": "July 2025 — Present"
+    }
+  },
+  "skills": {
+    "heading": "Skills",
+    "icon": "fa-solid fa-lightbulb",
+    "items": [
+      "Business Strategy",
+      "Product Management",
+      "Team Leadership",
+      "Financial Modeling & Valuation",
+      "Data Analysis & Transformation",
+      "Business Modeling",
+      "Project Management"
+    ]
+  },
+  "achievements": {
+    "heading": "Past Main Achievements",
+    "icon": "fa-solid fa-trophy",
+    "cards": [
+      {
+        "icon": "fa-solid fa-person-running",
+        "title": "Sports",
+        "items": [
+          "Marathon Moscow",
+          "EcoTrail 45km",
+          "Semi-marathon below 1h25"
+        ]
+      },
+      {
+        "icon": "fa-solid fa-heart",
+        "title": "Family",
+        "items": [
+          "1 wife and three happy boys"
+        ]
+      },
+      {
+        "icon": "fa-solid fa-file-excel",
+        "title": "Excel Modeling",
+        "items": [
+          "Inventory tool for all IBM Z systems",
+          "Strategic cashflow split tool — 300+ operating units (Bourbon)",
+          "Costs allocation tool — 20+ countries (BNP Paribas)",
+          "PV project value split tool — 50+ projects (Solek)",
+          "VBA search/navigation app for large databases",
+          "Custom Excel add-in for complex model navigation"
+        ]
+      }
+    ]
+  },
+  "languages": {
+    "heading": "Languages",
+    "icon": "fa-solid fa-globe",
+    "items": [
+      { "name": "French", "level": "Native", "levelClass": "native" },
+      { "name": "English", "level": "Professional", "levelClass": "professional" },
+      { "name": "Russian", "level": "Professional", "levelClass": "professional" },
+      { "name": "Spanish", "level": "Limited", "levelClass": "limited" },
+      { "name": "Czech", "level": "Elementary", "levelClass": "elementary" }
+    ]
+  },
+  "learning": {
+    "heading": "Actively Learning",
+    "icon": "fa-solid fa-graduation-cap",
+    "items": [
+      { "icon": "fa-solid fa-brain", "label": "Artificial Intelligence" },
+      { "icon": "fa-solid fa-gears", "label": "Machine Learning" },
+      { "icon": "fa-solid fa-robot", "label": "Claude" },
+      { "icon": "fa-solid fa-network-wired", "label": "AI Agents" }
+    ]
+  },
+  "contact": {
+    "heading": "Contact",
+    "icon": "fa-solid fa-envelope",
+    "items": [
+      {
+        "icon": "fa-solid fa-at",
+        "label": "donatien.dumas@sciencespo.fr",
+        "href": "mailto:donatien.dumas@sciencespo.fr",
+        "external": false
+      },
+      {
+        "icon": "fa-brands fa-linkedin",
+        "label": "linkedin.com/in/donatiendumas",
+        "href": "https://linkedin.com/in/donatiendumas",
+        "external": true
+      }
+    ]
+  },
+  "footer": {
+    "text": "© 2026 Donatien Dumas. All rights reserved."
+  }
+}
