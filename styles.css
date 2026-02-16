@@ -301,6 +301,24 @@ section p {
     font-weight: 700;
 }
 
+/* ── Experiences grid override ── */
+#experiences .achievements-grid {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+/* ── Experiences map ── */
+#experiences-map {
+    margin-top: 1.5rem;
+}
+
+#experiences-map svg {
+    width: 100%;
+    height: auto;
+    max-width: 700px;
+    display: block;
+    margin: 0 auto;
+}
+
 /* ── Languages ── */
 .languages-list {
     list-style: none;
@@ -340,6 +358,11 @@ section p {
 .lang-level.professional {
     background: #d6eaff;
     color: #0968c3;
+}
+
+.lang-level.intermediate {
+    background: #e0f0e0;
+    color: #2e7d32;
 }
 
 .lang-level.limited {
@@ -391,6 +414,42 @@ section p {
     50% {
         box-shadow: 0 0 20px rgba(9, 132, 227, 0.35);
     }
+}
+
+/* ── Section toggle ── */
+.section-hidden {
+    display: none;
+}
+
+/* ── Gifts ── */
+.gifts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.gift-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    text-decoration: none;
+    color: var(--accent);
+    font-weight: 500;
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+
+.gift-link:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(9, 132, 227, 0.15);
+}
+
+.gift-link i {
+    font-size: 1.2rem;
 }
 
 /* ── Contact ── */

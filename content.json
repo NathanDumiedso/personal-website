@@ -7,11 +7,13 @@
   },
   "nav": [
     { "label": "About", "href": "#about" },
-    { "label": "Experience", "href": "#experience" },
+    { "label": "Role", "href": "#experience" },
+    { "label": "Experiences", "href": "#experiences" },
     { "label": "Skills", "href": "#skills" },
     { "label": "Achievements", "href": "#achievements" },
     { "label": "Languages", "href": "#languages" },
     { "label": "Learning", "href": "#learning" },
+    { "label": "Gifts", "href": "#gifts" },
     { "label": "Contact", "href": "#contact" }
   ],
   "about": {
@@ -46,19 +48,11 @@
     "icon": "fa-solid fa-trophy",
     "cards": [
       {
-        "icon": "fa-solid fa-person-running",
-        "title": "Sports",
-        "items": [
-          "Marathon Moscow",
-          "EcoTrail 45km",
-          "Semi-marathon below 1h25"
-        ]
-      },
-      {
         "icon": "fa-solid fa-heart",
         "title": "Family",
         "items": [
-          "1 wife and three happy boys"
+          "1 wife",
+          "3 happy boys"
         ]
       },
       {
@@ -68,9 +62,16 @@
           "Inventory tool for all IBM Z systems",
           "Strategic cashflow split tool — 300+ operating units (Bourbon)",
           "Costs allocation tool — 20+ countries (BNP Paribas)",
-          "PV project value split tool — 50+ projects (Solek)",
-          "VBA search/navigation app for large databases",
-          "Custom Excel add-in for complex model navigation"
+          "PV project value split tool — 50+ projects (Solek)"
+        ]
+      },
+      {
+        "icon": "fa-solid fa-person-running",
+        "title": "Sports",
+        "items": [
+          "Marathon Moscow",
+          "EcoTrail 45km",
+          "Semi-marathon below 1h25"
         ]
       }
     ]
@@ -81,9 +82,35 @@
     "items": [
       { "name": "French", "level": "Native", "levelClass": "native" },
       { "name": "English", "level": "Professional", "levelClass": "professional" },
-      { "name": "Russian", "level": "Professional", "levelClass": "professional" },
-      { "name": "Spanish", "level": "Limited", "levelClass": "limited" },
-      { "name": "Czech", "level": "Elementary", "levelClass": "elementary" }
+      { "name": "Czech", "level": "Intermediate", "levelClass": "intermediate" },
+      { "name": "Russian", "level": "Limited", "levelClass": "limited" },
+      { "name": "Spanish", "level": "Limited", "levelClass": "limited" }
+    ]
+  },
+  "experiences": {
+    "heading": "Experiences",
+    "icon": "fa-solid fa-briefcase",
+    "cards": [
+      {
+        "icon": "fa-solid fa-coins",
+        "title": "5Y of Financial experience",
+        "items": [
+          "Solek (PV)",
+          "BNP Paribas Cardif (Insurance)",
+          "EY (Consulting)",
+          "Mazars (Consulting)"
+        ]
+      },
+      {
+        "icon": "fa-solid fa-laptop-code",
+        "title": "5Y of IT and entrepreneurial experiences",
+        "items": [
+          "IBM (Internal IT)",
+          "Qrowdsy (Market Research)",
+          "Vocabook (Education)",
+          "Smilway (Entertainment)"
+        ]
+      }
     ]
   },
   "learning": {
@@ -94,6 +121,16 @@
       { "icon": "fa-solid fa-gears", "label": "Machine Learning" },
       { "icon": "fa-solid fa-robot", "label": "Claude" },
       { "icon": "fa-solid fa-network-wired", "label": "AI Agents" }
+    ]
+  },
+  "gifts": {
+    "heading": "Gifts for you",
+    "icon": "fa-solid fa-gift",
+    "items": [
+      { "label": "Navigation add-in", "file": "gifts/navigation-addin.xlam" },
+      { "label": "VBA visualization app", "file": "gifts/vba-visualization-app.xlsm" },
+      { "label": "Practical add-in", "file": "gifts/practical-addin.xlam" },
+      { "label": "Excel Reader", "file": "gifts/excel-reader.xlsm" }
     ]
   },
   "contact": {
@@ -111,6 +148,18 @@
         "label": "linkedin.com/in/donatiendumas",
         "href": "https://linkedin.com/in/donatiendumas",
         "external": true
+      },
+      {
+        "icon": "fa-brands fa-whatsapp",
+        "label": "+33 7 50 42 37 65",
+        "href": "https://wa.me/33750423765",
+        "external": true
+      },
+      {
+        "icon": "fa-solid fa-phone",
+        "label": "+420 792 754 424",
+        "href": "tel:+420792754424",
+        "external": false
       }
     ]
   },

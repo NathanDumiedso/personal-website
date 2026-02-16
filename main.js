@@ -6,13 +6,17 @@ document.addEventListener('DOMContentLoaded', () => {
             renderNav(data.nav);
             renderAbout(data.about);
             renderExperience(data.experience);
+            renderExperiences(data.experiences);
+            renderExperiencesMap();
             renderSkills(data.skills);
             renderAchievements(data.achievements);
             renderLanguages(data.languages);
             renderLearning(data.learning);
+            renderGifts(data.gifts);
             renderContact(data.contact);
             renderFooter(data.footer);
             initScrollAnimations();
+            initNavToggle();
         });
 });
 
@@ -66,6 +70,68 @@ function renderAchievements(achievements) {
     ).join('');
 }
 
+function renderExperiences(experiences) {
+    const section = document.getElementById('experiences');
+    section.querySelector('h2').innerHTML = `<i class="${experiences.icon}"></i> ${experiences.heading}`;
+    const grid = section.querySelector('.achievements-grid');
+    grid.innerHTML = experiences.cards.map(card =>
+        `<div class="achievement-card">
+            <div class="achievement-icon"><i class="${card.icon}"></i></div>
+            <h3>${card.title}</h3>
+            <ul>${card.items.map(item => `<li>${item}</li>`).join('')}</ul>
+        </div>`
+    ).join('');
+}
+
+function renderExperiencesMap() {
+    const container = document.getElementById('experiences-map');
+    const width = 700;
+    const height = 380;
+
+    const highlightedIds = new Set(['250', '643', '840', '124', '203']);
+    const highlightColor = '#0984e3';
+
+    const svg = d3.select(container)
+        .append('svg')
+        .attr('viewBox', `0 0 ${width} ${height}`)
+        .attr('preserveAspectRatio', 'xMidYMid meet');
+
+    const projection = d3.geoNaturalEarth1()
+        .scale(130)
+        .translate([width / 2, height / 2 + 10]);
+
+    const path = d3.geoPath().projection(projection);
+
+    d3.json('https://unpkg.com/world-atlas@2/countries-110m.json').then(world => {
+        const countries = topojson.feature(world, world.objects.countries);
+
+        svg.selectAll('path')
+            .data(countries.features)
+            .enter()
+            .append('path')
+            .attr('d', path)
+            .attr('fill', d => highlightedIds.has(d.id) ? highlightColor : '#dfe6e9')
+            .attr('stroke', '#b2bec3')
+            .attr('stroke-width', 0.4);
+
+        const legend = svg.append('g')
+            .attr('transform', `translate(${width - 310}, ${height - 30})`);
+
+        legend.append('rect')
+            .attr('width', 14)
+            .attr('height', 14)
+            .attr('rx', 2)
+            .attr('fill', highlightColor);
+
+        legend.append('text')
+            .attr('x', 20)
+            .attr('y', 11)
+            .attr('font-size', '11px')
+            .attr('fill', '#2d3436')
+            .text('Country where I worked or studied > 6 months');
+    });
+}
+
 function renderLanguages(languages) {
     const section = document.getElementById('languages');
     section.querySelector('h2').innerHTML = `<i class="${languages.icon}"></i> ${languages.heading}`;
@@ -90,6 +156,18 @@ function renderLearning(learning) {
     ).join('');
 }
 
+function renderGifts(gifts) {
+    const section = document.getElementById('gifts');
+    section.querySelector('h2').innerHTML = `<i class="${gifts.icon}"></i> ${gifts.heading}`;
+    const grid = section.querySelector('.gifts-grid');
+    grid.innerHTML = gifts.items.map(item =>
+        `<a class="gift-link" href="${item.file}" download>
+            <i class="fa-solid fa-download"></i>
+            <span>${item.label}</span>
+        </a>`
+    ).join('');
+}
+
 function renderContact(contact) {
     const section = document.getElementById('contact');
     section.querySelector('h2').innerHTML = `<i class="${contact.icon}"></i> ${contact.heading}`;
@@ -102,6 +180,32 @@ function renderContact(contact) {
 
 function renderFooter(footer) {
     document.getElementById('footer-text').textContent = footer.text;
+}
+
+function initNavToggle() {
+    document.getElementById('nav-list').addEventListener('click', (e) => {
+        const link = e.target.closest('a');
+        if (!link) return;
+        e.preventDefault();
+
+        const href = link.getAttribute('href');
+        const sections = document.querySelectorAll('main > section');
+
+        if (href === '#about') {
+            sections.forEach(s => s.classList.remove('section-hidden'));
+        } else {
+            sections.forEach(s => s.classList.add('section-hidden'));
+            const target = document.querySelector(href);
+            if (target) {
+                target.classList.remove('section-hidden');
+            }
+        }
+
+        const scrollTarget = document.querySelector(href);
+        if (scrollTarget) {
+            scrollTarget.scrollIntoView({ behavior: 'smooth' });
+        }
+    });
 }
 
 function initScrollAnimations() {
