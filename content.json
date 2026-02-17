@@ -130,7 +130,7 @@
       { "label": "Navigation add-in", "file": "gifts/navigation-addin.xlam" },
       { "label": "VBA visualization app", "file": "gifts/vba-visualization-app.xlsm" },
       { "label": "Practical add-in", "file": "gifts/practical-addin.xlam" },
-      { "label": "Excel Reader", "file": "gifts/excel-reader.xlsm" }
+      { "label": "Excel Reader", "url": "https://sub.donatiendumas.com/" }
     ]
   },
   "contact": {

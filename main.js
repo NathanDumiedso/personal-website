@@ -160,12 +160,18 @@ function renderGifts(gifts) {
     const section = document.getElementById('gifts');
     section.querySelector('h2').innerHTML = `<i class="${gifts.icon}"></i> ${gifts.heading}`;
     const grid = section.querySelector('.gifts-grid');
-    grid.innerHTML = gifts.items.map(item =>
-        `<a class="gift-link" href="${item.file}" download>
+    grid.innerHTML = gifts.items.map(item => {
+        if (item.url) {
+            return `<a class="gift-link" href="${item.url}" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                <span>${item.label}</span>
+            </a>`;
+        }
+        return `<a class="gift-link" href="${item.file}" download>
             <i class="fa-solid fa-download"></i>
             <span>${item.label}</span>
-        </a>`
-    ).join('');
+        </a>`;
+    }).join('');
 }
 
 function renderContact(contact) {
